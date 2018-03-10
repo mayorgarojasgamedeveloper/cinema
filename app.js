@@ -1,23 +1,20 @@
-var http = require('http');
-var fs = require('fs');
+const express = require('express');
+const app = express();
 
-var server = http.createServer(function(req, res) {
-  console.log('request was made: ' + req.url);
-  if(req.url === '/home' || req.url === '/') {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    fs.createReadStream(__dirname + '/index.html').pipe(res);
-  } else if (req.url === '/contact') {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    fs.createReadStream(__dirname + '/contact.html').pipe(res);
-  } else if (req.url === '/api/ninjas') {
-    var ninjas = [{name: 'ryu', age: 29}, {name: 'yoshi', age: 32}];
-    res.writeHead(200, {'Content-Type': 'application/json'});
-    res.end(JSON.stringify(ninjas));
-  } else {
-    res.writeHead(404, {'Content-Type': 'text/html'});
-    fs.createReadStream(__dirname + '/404.html').pipe(res);
-  }
+app.get('/', function(req, res) {
+  res.sendFile(__dirname + '/views/index.html');
 });
 
-server.listen(3000);
-console.log('Server created');
+app.get('/contact', function(req, res) {
+  res.sendFile(__dirname + '/views/contact.html');
+});
+
+app.get('/profile/:user', function(req, res) {
+  res.send('profile: ' + req.params.user);
+});
+
+app.get('*', function(req, res) {
+  res.sendFile(__dirname + '/views/404.html');
+});
+
+app.listen(3000);

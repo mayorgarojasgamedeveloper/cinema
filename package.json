@@ -11,7 +11,8 @@
     "url": "git+https://github.com/mayorgarojasgamedeveloper/cinema.git"
   },
   "keywords": [
-    "cinema"
+    "cinema",
+    "BD"
   ],
   "author": "Fernando Mayorga",
   "license": "ISC",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/mayorgarojasgamedeveloper/cinema#readme",
   "dependencies": {
+    "ejs": "^2.5.7",
     "express": "^4.16.2"
   }
 }
