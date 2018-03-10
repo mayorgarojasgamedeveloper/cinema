@@ -3,22 +3,16 @@ const app = express();
 
 // Global
 app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
+app.use(express.static(__dirname + '/public'));
 
 // routing
 app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/views/index.html');
-});
-
-app.get('/contact', function(req, res) {
-  res.sendFile(__dirname + '/views/contact.html');
-});
-
-app.get('/profile/:user', function(req, res) {
-  res.render('profile', {person: req.params.user});
+  res.render('home');
 });
 
 app.get('*', function(req, res) {
-  res.sendFile(__dirname + '/views/404.html');
+  res.render('404');
 });
 
 app.listen(3000);
