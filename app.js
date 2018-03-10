@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
 
+// Global
+app.set('view engine', 'ejs');
+
+// routing
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
@@ -10,7 +14,7 @@ app.get('/contact', function(req, res) {
 });
 
 app.get('/profile/:user', function(req, res) {
-  res.send('profile: ' + req.params.user);
+  res.render('profile', {person: req.params.user});
 });
 
 app.get('*', function(req, res) {
@@ -18,3 +22,4 @@ app.get('*', function(req, res) {
 });
 
 app.listen(3000);
+console.log('Server started');
