@@ -1,8 +1,83 @@
-* {
-  padding: 0;
-  margin: 0;
+nav {
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
 }
-
-body {
-  background-color: red;
+nav .up {
+  width: 100%;
+  background-color: #0b5ba1;
+}
+nav .content {
+  width: 980px;
+  height: 75px;
+  margin: 0 auto;
+  display: flex;
+}
+nav .content img {
+  width: 300px;
+  height: 55px;
+  margin: auto 0;
+}
+nav .content form {
+  width: 100%;
+  margin: auto 0;
+}
+nav .content #search {
+  padding: 8px 10px;
+  width: 300px;
+  border: none;
+  margin-left: 10px;
+  border-radius: 3px;
+  border: 2px solid white;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+nav .content #search:hover {
+  border-radius: 0px;
+  border: 2px solid lightblue;
+}
+nav .content #search:focus {
+  border-radius: 0px;
+  border: 2px solid lightblue;
+}
+nav .content #btn_cartelera {
+  font-weight: bold;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #FECA30;
+  float: right;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+nav .content #btn_cartelera:hover {
+  border-radius: 0px;
+  background-color: #fed430;
+}
+nav .down {
+  width: 100%;
+  background-color: #222222;
+}
+nav ul {
+  width: 980px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+nav ul li {
+  display: inline-block;
+  padding: 10px 20px;
+  -moz-transition: background 0.5s;
+  -webkit-transition: background 0.5s;
+  transition: background 0.5s;
+}
+nav ul li:hover {
+  background: black;
+  display: inline-block;
+  padding: 10px 20px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #FFCB06;
 }

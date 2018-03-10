@@ -1,0 +1,21 @@
+body {
+  background-color: #0f0f0f;
+  background-image: url('../img/img-error404.jpg');
+  background-repeat: no-repeat;
+}
+.error404 {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 600px;
+  position: absolute;
+  right: 300px;
+  top: 200px;
+}
+.error404 h1 {
+  color: #FFCB06;
+  font-weight: bold;
+  font-size: 100px;
+}
+.error404 p {
+  color: white;
+  font-size: 20px;
+}
